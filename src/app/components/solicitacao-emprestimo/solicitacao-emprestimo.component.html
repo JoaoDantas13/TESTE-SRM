@@ -1,0 +1,72 @@
+<div class="div-geral">
+  <mat-card>
+    <mat-card-title>Solicitação de Empréstimo</mat-card-title>
+    <form [formGroup]="formulario">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Nome do solicitante"
+          name="nome"
+          formControlName="nome"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          placeholder="Valor desejado"
+          name="valor"
+          formControlName="valor"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          placeholder="Número de parcelas"
+          name="parcelas"
+          formControlName="parcelas"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <button mat-raised-button (click)="simularEmprestimo()">
+        <span class="loader" *ngIf="loading"></span>
+        <span [ngClass]="loading == true ? 'noneText' : ''"
+          >Simular empréstimo</span
+        >
+      </button>
+    </form>
+  </mat-card>
+</div>
+
+<div class="div-card">
+  <mat-card class="example-card">
+    <mat-card-title>Resultado da simulação:</mat-card-title>
+    <mat-card-content>
+      <p>Nome : {{ nome }}</p>
+      <p>
+        Valor das parcelas:
+        <span class="span-result">{{ valorParcelas | number : "1.2-2" }}</span>
+      </p>
+      <p>
+        Número de parcelas:
+        <span class="span-result">{{ numeroParcelas }}</span>
+      </p>
+      <p>
+        Total do valor com juros:
+        <span class="span-result">{{ totalJuros }}</span>
+      </p></mat-card-content
+    >
+
+    <div class="div-btn">
+      <button mat-raised-button color="primary" (click)="confirmarEmprestimo()">
+        Confirmação
+      </button>
+    </div>
+  </mat-card>
+</div>

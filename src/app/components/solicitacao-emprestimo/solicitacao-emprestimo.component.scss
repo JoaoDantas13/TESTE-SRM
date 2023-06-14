@@ -1,0 +1,40 @@
+.div-geral {
+  padding: 30px;
+  height: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+  padding: 10px;
+}
+
+.example-card {
+  min-width: 400px;
+}
+
+.span-result {
+  color: rgb(148, 148, 148);
+}
+
+mat-card-title {
+  text-align: center;
+}
+
+mat-card-content {
+  margin-top: 7%;
+}
+
+p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.div-card {
+  display: flex;
+  justify-content: center;
+}
+
+.div-btn {
+  display: flex;
+  justify-content: center;
+}
